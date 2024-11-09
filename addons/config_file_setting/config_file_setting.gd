@@ -18,7 +18,7 @@
 ##----------------------------------------------------##
 ## @Auther: 2000
 ## @Date: 2024-10-25
-## @LastEditTime: 2024-10-27
+## @LastEditTime: 2024-11-09
 ## @Tags: Setting, 配置, 设置
 ## @Version: 1.0.0
 ## @License: MIT license
@@ -33,13 +33,13 @@ var plugin_generate_setting_config_manager : PluginGenerateSettingConfigManager
 
 func _enter_tree() -> void:
 	initialize()
-	add_config_table_csv_menu()
+	add_tool_menu()
 	print("Enable ConfigFileSetting")
 	pass
 
 
 func _exit_tree() -> void:
-	remove_config_table_csv_menu()
+	remove_tool_menu()
 	destroy()
 	print("Disable ConfigFileSetting")
 	pass
@@ -56,11 +56,11 @@ func destroy() -> void:
 	pass
 
 
-func add_config_table_csv_menu() -> void:
+func add_tool_menu() -> void:
 	add_tool_menu_item("Config File Setting", plugin_generate_setting_config_manager.show_plugin_create_setting_config_manager_window)
 	pass
 
 
-func remove_config_table_csv_menu() -> void:
+func remove_tool_menu() -> void:
 	remove_tool_menu_item("Config File Setting")
 	pass
